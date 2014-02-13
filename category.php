@@ -1,7 +1,13 @@
 <?php get_header(); ?>
-<div class="container">
-  <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+  <?php
+  if (have_posts()) {
+    $i = 0;
+    while (have_posts()) {
+      the_post();
+      if ($i == 0) { ?>
+        <div <?php post_class('splash-puff'); ?>>
+          <div class="container">
+      <?php }?>
       <div class="row cat-list">  
         <div class="col-sm-3">
           <?php echo get_the_post_thumbnail(null, 'homepage-thumb'); ?>
@@ -17,15 +23,23 @@
           </article>
         </div>
       </div>
-    <?php endwhile; ?>
+      <?php
+      if ($i == 0) {
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="container">' ; 
+      }
+      $i++;
+    }
+    ?>
   </div>
-<?php else: ?>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-10">
-        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-      </div>
+<?php } else { ?>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
     </div>
   </div>
-<?php endif; ?>  
+</div>
+<?php } ?>  
 <?php get_footer(); ?>

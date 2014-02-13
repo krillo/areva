@@ -7,6 +7,21 @@
  */
 get_header();
 ?>
+<div id="header-puff" class="splash-puff">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 headline-img">
+        <img src="http://areva.dev/wp-content/uploads/2014/02/nimis.jpg" alt="" />
+      </div>
+      <div class="col-sm-6 headline-txt">
+        <h1>Donec id elit non mi porta </h1>
+        Eelit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.at eget metus. Vestibulum id ligula porta felis euismod semper.at eget metus. Vestibulum id ligula porta felis euismod semper.
+        <br>
+        <a href="">READ MORE <i class="fa fa-play-circle"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container" id="main-container">
   <div class="row">
     <div class="col-sm-3">&nbsp;</div>
